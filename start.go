@@ -8,8 +8,8 @@ import (
 func main() {
 r := chi.NewRouter()
 r.Use(middleware.BasicAuth("url-shortener", map[string]string{
-  "olfox": "mirumir57#",
-	"olfox2": "tuxpux7",
+"olfox": "A78GHKJG#",
+"olfox2": "tuxpux7",
      }))
 r.Get("/", func(w http.ResponseWriter, r *http.Request) {
 w.Write([]byte("welcome"))
