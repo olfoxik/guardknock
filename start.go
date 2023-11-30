@@ -5,7 +5,9 @@ import (
 "github.com/go-chi/chi/v5"
 "github.com/go-chi/chi/v5/middleware"
 "github.com/BurntSushi/toml"
-"time")
+"time"
+)
+
 # config.toml
 # https://ashirobokov.wordpress.com/2017/02/06/golang-config-toml/
 
@@ -39,7 +41,6 @@ var conf Config
 if _, err := toml.DecodeFile("config.toml", &conf); err != nil {
         // обработка ошибки.
 }
-
 
 
 r := chi.NewRouter()
