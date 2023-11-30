@@ -28,7 +28,7 @@ r.Use(middleware.BasicAuth("url-shortener", map[string]string{
 "olfox2": "tuxpux7",
      }))
 r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-w.Write([]byte(conf.Servers["alpha"].IP))
+w.Write([]byte("Welcome"))
 })
 
 
