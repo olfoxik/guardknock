@@ -23,14 +23,16 @@ var conf Config
 if _, err := toml.DecodeFile("config.toml", &conf); err != nil {
         // обработка ошибки.
 }
-	
+
+
+
 r := chi.NewRouter()
 r.Use(middleware.BasicAuth("url-shortener", map[string]string{
 "olfox": "A78GHKJG#",
 "olfox2": "tuxpux7",
      }))
 r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-w.Write([]byte("welcome"))
+w.Write([]byte(conf.Servers["alpha"].IP))
 })
 
 
