@@ -14,13 +14,35 @@ type tomlConfig struct {
         Name string
         Dob  time.Time
     }
+    Database struct {
+        Server        string
+        Ports         []int
+        ConnectionMax uint
+        Enabled       bool
+    }
+    Servers map[string]ServerInfo
+    Clients struct {
+        Data  [][]interface{}
+        Hosts []string
+    }
+}
+
+type ServerInfo struct {
+    IP net.IP
+    DC string
+}
 
 func main() {
 
-var conf Config
-if _, err := toml.DecodeFile("config.toml", &conf); err != nil {
-        // обработка ошибки.
-}
+  f, err := os.Open("config.toml")
+    if err != nil {
+        panic(err)
+    }
+    defer f.Close()
+    var config tomlConfig
+    if err := toml.NewDecoder(f).Decode(&config); err != nil {
+        panic(err)
+    }
 
 r := chi.NewRouter()
 r.Use(middleware.BasicAuth("url-shortener", map[string]string{
