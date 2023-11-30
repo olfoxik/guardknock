@@ -9,12 +9,28 @@ import (
 # config.toml
 # https://ashirobokov.wordpress.com/2017/02/06/golang-config-toml/
 
-type Config struct {
-  Age int
-  Cats []string
-  Pi float64
-  Perfection []int
-  DOB time.Time
+type tomlConfig struct {
+    Title string
+    Owner struct {
+        Name string
+        Dob  time.Time
+    }
+    Database struct {
+        Server        string
+        Ports         []int
+        ConnectionMax uint
+        Enabled       bool
+    }
+    Servers map[string]ServerInfo
+    Clients struct {
+        Data  [][]interface{}
+        Hosts []string
+    }
+}
+
+type ServerInfo struct {
+    IP net.IP
+    DC string
 }
 
 func main() {
