@@ -8,6 +8,7 @@ import (
 "time")
 # config.toml
 # https://ashirobokov.wordpress.com/2017/02/06/golang-config-toml/
+
 type Config struct {
   Age int
   Cats []string
