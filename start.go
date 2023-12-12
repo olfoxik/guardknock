@@ -15,17 +15,17 @@ func main() {
 
 cfg, err := ini.Load("config.toml")
 hh := cfg.Section("users").KeysHash()
-	
+fmt.Println("map:", m)	
 if err != nil {
 fmt.Printf("Fail to read file: %v", err)
 os.Exit(1)     }
 
-hh :=  map[string]string{
+userpwd :=  map[string]string{
 "olfox": "A78GHKJG#",
 "olfox2": "tuxpux7",    }
 
 r := chi.NewRouter()
-r.Use(middleware.BasicAuth("url-shortener", hh ))
+r.Use(middleware.BasicAuth("url-shortener", userpwd ))
 	
 r.Get("/", func(w http.ResponseWriter, r *http.Request) {
 w.Write([]byte("www") )
