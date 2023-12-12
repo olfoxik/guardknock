@@ -28,7 +28,7 @@ r := chi.NewRouter()
 r.Use(middleware.BasicAuth("url-shortener", userpwd ))
 	
 r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-w.Write([]byte(hh) )
+w.Write([]byte("www") )
 })
 
  
