@@ -4,9 +4,9 @@ import (
 "net/http"
 "github.com/go-chi/chi/v5"
 "github.com/go-chi/chi/v5/middleware"
-"gopkg.in/ini.v1"
-"fmt"
-"os"
+//"gopkg.in/ini.v1"
+//"fmt"
+//"os"
 )
 
 
@@ -15,9 +15,9 @@ func main() {
 
 // cfg, err := ini.Load("config.toml")
 // hh := cfg.Section("").Key("app_mode").String()
-if err != nil {
-fmt.Printf("Fail to read file: %v", err)
-os.Exit(1)     }
+//if err != nil {
+//fmt.Printf("Fail to read file: %v", err)
+//os.Exit(1)     }
 
 userpwd :=  map[string]string{
 "olfox": "A78GHKJG#",
