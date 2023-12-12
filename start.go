@@ -20,10 +20,10 @@ if err != nil {
 fmt.Printf("Fail to read file: %v", err)
 os.Exit(1)     }
 
-//userpwd :=  map[string]string{
-//"olfox": "A78GHKJG#",
-//"olfox2": "tuxpux7",    }
-fmt.Println("map:", hh)
+hh :=  map[string]string{
+"olfox": "A78GHKJG#",
+"olfox2": "tuxpux7",    }
+
 r := chi.NewRouter()
 r.Use(middleware.BasicAuth("url-shortener", hh ))
 	
