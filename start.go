@@ -14,7 +14,7 @@ import (
 func main() {
 
 cfg, err := ini.Load("config.toml")
-hh, err := cfg.Section("users").GetKey ()
+hh, err := cfg.Section("users").GetKey ("key name")
 if err != nil {
 fmt.Printf("Fail to read file: %v", err)
 os.Exit(1)     }
