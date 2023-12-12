@@ -23,7 +23,7 @@ os.Exit(1)     }
 //userpwd :=  map[string]string{
 //"olfox": "A78GHKJG#",
 //"olfox2": "tuxpux7",    }
-fmt.Printf (hh)
+fmt.Println("map:", hh)
 r := chi.NewRouter()
 r.Use(middleware.BasicAuth("url-shortener", hh ))
 	
