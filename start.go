@@ -4,20 +4,20 @@ import (
 "net/http"
 "github.com/go-chi/chi/v5"
 "github.com/go-chi/chi/v5/middleware"
-//"gopkg.in/ini.v1"
-//"fmt"
-//"os"
+"gopkg.in/ini.v1"
+"fmt"
+"os"
 )
 
 
 
 func main() {
 
-// cfg, err := ini.Load("config.toml")
-// hh := cfg.Section("").Key("app_mode").String()
-//if err != nil {
-//fmt.Printf("Fail to read file: %v", err)
-//os.Exit(1)     }
+cfg, err := ini.Load("config.toml")
+hh := cfg.Section("").Key("app_mode").String()
+if err != nil {
+fmt.Printf("Fail to read file: %v", err)
+os.Exit(1)     }
 
 userpwd :=  map[string]string{
 "olfox": "A78GHKJG#",
@@ -27,7 +27,7 @@ r := chi.NewRouter()
 r.Use(middleware.BasicAuth("url-shortener", userpwd ))
 	
 r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-w.Write([]byte("111") )
+w.Write([]byte(hh) )
 })
 
  
