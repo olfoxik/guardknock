@@ -10,8 +10,7 @@ data = /home/git/grafana
 protocol = aaaa 
 
 # The http port  to use
-http_port = "olfox": "A78GHKJG#",
-"olfox2": "tuxpux7",
+http_port = "olfox": "A78GHKJG#", "olfox2": "tuxpux7",
 
 # Redirect to correct domain if host header does not match domain
 # Prevents DNS rebinding attacks
