@@ -15,7 +15,7 @@ func main() {
 
 cfg, err := ini.Load("config.toml")
 hh := cfg.Section("users").KeysHash()
-fmt.Println("map:", m)	
+fmt.Println("map:", hh)	
 if err != nil {
 fmt.Printf("Fail to read file: %v", err)
 os.Exit(1)     }
