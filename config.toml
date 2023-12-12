@@ -7,7 +7,7 @@ data = /home/git/grafana
 
 [server]
 # Protocol (http or https)
-protocol = "olfox": "A78GHKJG#", "olfox2": "tuxpux7", 
+protocol = aaaa 
 
 # The http port  to use
 http_port = 9999
