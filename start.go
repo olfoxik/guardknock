@@ -10,10 +10,13 @@ import (
 
 func main() {
 
-r := chi.NewRouter()
-r.Use(middleware.BasicAuth("url-shortener", map[string]string{
+userpwd :=  map[string]string{
 "olfox": "A78GHKJG#",
-"olfox2": "tuxpux7",    }))
+"olfox2": "tuxpux7",    }
+	
+r := chi.NewRouter()
+r.Use(middleware.BasicAuth("url-shortener", userpwd ))
+	
 r.Get("/", func(w http.ResponseWriter, r *http.Request) {
 w.Write([]byte("Welcome"))
 })
