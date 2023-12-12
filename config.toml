@@ -15,3 +15,6 @@ http_port = rrrrrr
 # Redirect to correct domain if host header does not match domain
 # Prevents DNS rebinding attacks
 enforce_domain = true
+
+[users]
+sdfsdf = errr
