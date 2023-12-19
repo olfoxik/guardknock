@@ -3,3 +3,5 @@
 После успешной авторизации (HTTP Basic Auth)
 пользователй выдает строчку для port knocking (куда и
 каким образом постучаться) которая указывается в config.ini
+
+Клиент тут: https://github.com/olfoxik/guardknockclient
