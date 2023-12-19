@@ -15,7 +15,8 @@ func main() {
 
 cfg, err := ini.Load("config.ini")
 userpwd := cfg.Section("users").KeysHash()
-fmt.Println("map:", userpwd)	
+fmt.Println("map:", userpwd)
+url := cfg.Section("Main").Key("url").String()
 if err != nil {
 fmt.Printf("Fail to read file: %v", err)
 os.Exit(1)   }
