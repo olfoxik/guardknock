@@ -16,8 +16,8 @@ func main() {
 cfg, err := ini.Load("config.ini")
 userpwd := cfg.Section("users").KeysHash()
 fmt.Println("map:", userpwd)
-knockstr := cfg.Section("activstr").Key("knock").String()
-	
+knockstr := cfg.Section("main").Key("knock").String()
+port := cfg.Section("main").Key("port").String()
 if err != nil {
 fmt.Printf("Fail to read file: %v", err)
 os.Exit(1)   }
@@ -30,5 +30,5 @@ w.Write([]byte(knockstr))
 })
 
 
-http.ListenAndServe(":3004", r)
+http.ListenAndServe(":"+port , r)
 											}
